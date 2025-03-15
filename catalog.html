@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <section class="hero hero_catalog">
+        <header class="hero__header header center">
+            <a href="index.html"><img class="header__logo" src="./assets/images/logo.svg" alt="Лого"></a>
+            <input class="header__search-input" type="text" placeholder="Поиск">
+            <nav class="header__nav">
+                <ul class="header__menu">
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="catalog.html">Каталог</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="cart.html">Корзина</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__menu-mobile">
+                <a href="#"><img src="./assets/images/search-icon.svg" alt="search-icon"></a>
+                <a href="./catalog.html"><img src="./assets/images/catalog-icon.svg" alt="catalog-icon"></a>
+                <a href="./cart.html"><img src="./assets/images/cart-icon.svg" alt="cart-icon"></a>
+            </div>
+        </header>
+        <div class="hero__content center">
+            <h1 class="hero__content-title hero__content-title_catalog">Каталог</h1>
+        </div>
+    </section>
+    <section class="filtration center">
+        <ul class="filtration__menu">
+            <li class="filtration__item">
+                <a class="filtration__link" href="./index.html">Главная</a>
+            </li>
+            <li class="filtration__item">/</li>
+            <li class="filtration__item">
+                <p class="filtration__target">Каталог товаров</p>
+            </li>
+        </ul>
+        <div class="filtration-wrapper">
+            <div class="filtration-container filtration-container_modal">
+                <select name="filter" class="filtration__filter">
+                    <option value="">Фильтрация</option>
+                    <option value="new">Сперва новые</option>
+                </select>
+                <form class="filtration-modal" action="#" method="get">
+                    <div class="filtration-modal__container">
+                        <div class="filtration-modal__left-wrapper">
+                            <fieldset class="filtration-modal__fields">
+                                <legend class="filtration-modal__title">Сроки доставки</legend>
+                                <div class="filtration-modal__radio-wrapper">
+                                    <input class="filtration-modal__radio-input" type="radio" id="every"
+                                        name="delivery-time" value="every" checked>
+                                    <label class="filtration-modal__radio-label" for="every">Неважно</label>
+                                </div>
+                                <div class="filtration-modal__radio-wrapper">
+                                    <input class="filtration-modal__radio-input" type="radio" id="today"
+                                        name="delivery-time" value="today">
+                                    <label class="filtration-modal__radio-label" for="today">Сегодня</label>
+                                </div>
+                                <div class="filtration-modal__radio-wrapper">
+                                    <input class="filtration-modal__radio-input" type="radio" id="tomorrow"
+                                        name="delivery-time" value="tomorrow">
+                                    <label class="filtration-modal__radio-label" for="tomorrow">Завтра</label>
+                                </div>
+                                <div class="filtration-modal__radio-wrapper">
+                                    <input class="filtration-modal__radio-input" type="radio" id="three-days"
+                                        name="delivery-time" value="three-days">
+                                    <label class="filtration-modal__radio-label" for="three-days">До 3 дней</label>
+                                </div>
+                                <div class="filtration-modal__radio-wrapper">
+                                    <input class="filtration-modal__radio-input" type="radio" id="seven-days"
+                                        name="delivery-time" value="seven-days">
+                                    <label class="filtration-modal__radio-label" for="seven-days">До 7 дней</label>
+                                </div>
+                            </fieldset>
+                            <fieldset class="filtration-modal__fields">
+                                <legend class="filtration-modal__title">Цена</legend>
+                                <div class="filtration-modal__range-wrapper">
+                                    <label class="filtration-modal__range-label">от 0 руб. до 100000 руб.</label>
+                                    <div class="filtration-modal__range-container">
+                                        <input class="filtration-modal__range filtration-modal__range_min" type="range"
+                                            id="range" name="price-1" min="1" max="100000" value="1">
+                                        <input class="filtration-modal__range filtration-modal__range_max" type="range"
+                                            name="price-2" min="1" max="100000" value="100000">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset class="filtration-modal__fields filtration-modal__fields_color">
+                                <legend class="filtration-modal__title">Цвет</legend>
+                                <div class="filtration-modal__colors-wrapper">
+                                    <div class="filtration-modal__color">
+                                        <input class="filtration-modal__checkbox" type="checkbox" id="white">
+                                        <label class="filtration-modal__checkbox-label" for="white"></label>
+                                    </div>
+                                    <div class="filtration-modal__color">
+                                        <input class="filtration-modal__checkbox" type="checkbox" id="black">
+                                        <label class="filtration-modal__checkbox-label" for="black"></label>
+                                    </div>
+                                    <div class="filtration-modal__color">
+                                        <input class="filtration-modal__checkbox" type="checkbox" id="grey">
+                                        <label class="filtration-modal__checkbox-label" for="grey"></label>
+                                    </div>
+                                    <div class="filtration-modal__color">
+                                        <input class="filtration-modal__checkbox" type="checkbox" id="red">
+                                        <label class="filtration-modal__checkbox-label" for="red"></label>
+                                    </div>
+                                    <div class="filtration-modal__color">
+                                        <input class="filtration-modal__checkbox" type="checkbox" id="orange">
+                                        <label class="filtration-modal__checkbox-label" for="orange"></label>
+                                    </div>
+                                    <div class="filtration-modal__color">
+                                        <input class="filtration-modal__checkbox" type="checkbox" id="yellow">
+                                        <label class="filtration-modal__checkbox-label" for="yellow"></label>
+                                    </div>
+                                    <div class="filtration-modal__color">
+                                        <input class="filtration-modal__checkbox" type="checkbox" id="green">
+                                        <label class="filtration-modal__checkbox-label" for="green"></label>
+                                    </div>
+                                    <div class="filtration-modal__color">
+                                        <input class="filtration-modal__checkbox" type="checkbox" id="mint">
+                                        <label class="filtration-modal__checkbox-label" for="mint"></label>
+                                    </div>
+                                    <div class="filtration-modal__color">
+                                        <input class="filtration-modal__checkbox" type="checkbox" id="lightblue">
+                                        <label class="filtration-modal__checkbox-label" for="lightblue"></label>
+                                    </div>
+                                    <div class="filtration-modal__color">
+                                        <input class="filtration-modal__checkbox" type="checkbox" id="blue">
+                                        <label class="filtration-modal__checkbox-label" for="blue"></label>
+                                    </div>
+                                    <div class="filtration-modal__color">
+                                        <input class="filtration-modal__checkbox" type="checkbox" id="indigo">
+                                        <label class="filtration-modal__checkbox-label" for="indigo"></label>
+                                    </div>
+                                    <div class="filtration-modal__color">
+                                        <input class="filtration-modal__checkbox" type="checkbox" id="purple">
+                                        <label class="filtration-modal__checkbox-label" for="purple"></label>
+                                    </div>
+                                    <div class="filtration-modal__color">
+                                        <input class="filtration-modal__checkbox" type="checkbox" id="violet">
+                                        <label class="filtration-modal__checkbox-label" for="violet"></label>
+                                    </div>
+                                    <div class="filtration-modal__color">
+                                        <input class="filtration-modal__checkbox" type="checkbox" id="pink">
+                                        <label class="filtration-modal__checkbox-label" for="pink"></label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="filtration-modal__right-wrapper">
+                            <fieldset class="filtration-modal__fields">
+                                <legend class="filtration-modal__title">Тип комнаты</legend>
+                                <div class="filtration-modal__type">
+                                    <input class="filtration-modal__checkbox" type="checkbox" id="kitchen">
+                                    <label class="filtration-modal__checkbox-label" for="kitchen">Кухня и
+                                        столовая</label>
+                                </div>
+                                <div class="filtration-modal__type">
+                                    <input class="filtration-modal__checkbox" type="checkbox" id="bathroom">
+                                    <label class="filtration-modal__checkbox-label" for="bathroom">Ванная
+                                        комната</label>
+                                </div>
+                                <div class="filtration-modal__type">
+                                    <input class="filtration-modal__checkbox" type="checkbox" id="kids">
+                                    <label class="filtration-modal__checkbox-label" for="kids">Детская комната</label>
+                                </div>
+                                <div class="filtration-modal__type">
+                                    <input class="filtration-modal__checkbox" type="checkbox" id="office">
+                                    <label class="filtration-modal__checkbox-label" for="office">Домашний офис</label>
+                                </div>
+                                <div class="filtration-modal__type">
+                                    <input class="filtration-modal__checkbox" type="checkbox" id="living-room">
+                                    <label class="filtration-modal__checkbox-label" for="living-room">Гостиная</label>
+                                </div>
+                                <div class="filtration-modal__type">
+                                    <input class="filtration-modal__checkbox" type="checkbox" id="hallway">
+                                    <label class="filtration-modal__checkbox-label" for="hallway">Прихожая</label>
+                                </div>
+                                <div class="filtration-modal__type">
+                                    <input class="filtration-modal__checkbox" type="checkbox" id="bedroom">
+                                    <label class="filtration-modal__checkbox-label" for="bedroom">Спальня</label>
+                                </div>
+                                <div class="filtration-modal__type">
+                                    <input class="filtration-modal__checkbox" type="checkbox" id="wardrobe">
+                                    <label class="filtration-modal__checkbox-label" for="wardrobe">Гардероб</label>
+                                </div>
+                                <div class="filtration-modal__type">
+                                    <input class="filtration-modal__checkbox" type="checkbox" id="country-house">
+                                    <label class="filtration-modal__checkbox-label" for="country-house">Дача</label>
+                                </div>
+                                <div class="filtration-modal__type">
+                                    <input class="filtration-modal__checkbox" type="checkbox" id="light">
+                                    <label class="filtration-modal__checkbox-label" for="light">Свет</label>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <button type="submit" class="filtration-modal__btn">Применить</button>
+                </form>
+            </div>
+            <div class="filtration-container">
+                <select name="sorter" class="filtration__sorter">
+                    <option value="">По популярности</option>
+                </select>
+            </div>
+        </div>
+    </section>
+    <section class="catalog center">
+        <div class="catalog-container">
+            <article class="catalog-product">
+                <img class="catalog-product__image" src="./assets/images/tatran2.jpg" alt="Кровать TATRAN">
+                <h3 class="catalog-product__subtitle">Кровать TATRAN</h3>
+                <p class="catalog-product__text">
+                    Основание из полированной нержавеющей стали, придает оригинальный парящий эффект.
+                </p>
+                <p class="catalog-product__price">120 000 руб.</p>
+            </article>
+            <article class="catalog-product">
+                <img class="catalog-product__image" src="./assets/images/vilora.jpg" alt="Кресло VILORA">
+                <h3 class="catalog-product__subtitle">Кресло VILORA</h3>
+                <p class="catalog-product__text">
+                    Мягкое и уютное, аккуратное и стильное. Упругие подушки сиденья и приятная на ощупь ткань.
+                </p>
+                <p class="catalog-product__price">21 000 руб.</p>
+            </article>
+            <article class="catalog-product">
+                <img class="catalog-product__image" src="./assets/images/menu2.jpg" alt="Стол MENU">
+                <h3 class="catalog-product__subtitle">Стол MENU</h3>
+                <p class="catalog-product__text">
+                    Европейский дуб - отличается особой прочностью и стабильностью.
+                </p>
+                <p class="catalog-product__price">34 000 руб.</p>
+            </article>
+            <article class="catalog-product">
+                <img class="catalog-product__image" src="./assets/images/askesta2.jpg" alt="Диван ASKESTA">
+                <h3 class="catalog-product__subtitle">Диван ASKESTA</h3>
+                <p class="catalog-product__text">
+                    Благодаря защелкивающемуся механизму диван легко раскладывается в комфортную кровать
+                </p>
+                <p class="catalog-product__price">68 000 руб.</p>
+            </article>
+            <article class="catalog-product">
+                <img class="catalog-product__image" src="./assets/images/lunar.jpg" alt="Кресло LUNAR">
+                <h3 class="catalog-product__subtitle">Кресло LUNAR</h3>
+                <p class="catalog-product__text">
+                    Прекрасно переносит солнечные лучи, перепады влажности и любые осадки
+                </p>
+                <p class="catalog-product__price">40 000 руб.</p>
+            </article>
+            <article class="catalog-product">
+                <img class="catalog-product__image" src="./assets/images/nastan2.jpg" alt="Шкаф Nastan">
+                <h3 class="catalog-product__subtitle">Шкаф Nastan</h3>
+                <p class="catalog-product__text">
+                    Мебель может быть оснащена разнообразными системами подсветки.
+                </p>
+                <p class="catalog-product__price">80 000 руб.</p>
+            </article>
+            <article class="catalog-product">
+                <img class="catalog-product__image" src="./assets/images/tatran2.jpg" alt="Кровать TATRAN">
+                <h3 class="catalog-product__subtitle">Кровать TATRAN</h3>
+                <p class="catalog-product__text">
+                    Основание из полированной нержавеющей стали, придает оригинальный парящий эффект.
+                </p>
+                <p class="catalog-product__price">120 000 руб.</p>
+            </article>
+            <article class="catalog-product">
+                <img class="catalog-product__image" src="./assets/images/vilora.jpg" alt="Кресло VILORA">
+                <h3 class="catalog-product__subtitle">Кресло VILORA</h3>
+                <p class="catalog-product__text">
+                    Мягкое и уютное, аккуратное и стильное. Упругие подушки сиденья и приятная на ощупь ткань.
+                </p>
+                <p class="catalog-product__price">21 000 руб.</p>
+            </article>
+            <article class="catalog-product">
+                <img class="catalog-product__image" src="./assets/images/menu2.jpg" alt="Стол MENU">
+                <h3 class="catalog-product__subtitle">Стол MENU</h3>
+                <p class="catalog-product__text">
+                    Европейский дуб - отличается особой прочностью и стабильностью.
+                </p>
+                <p class="catalog-product__price">34 000 руб.</p>
+            </article>
+            <article class="catalog-product">
+                <img class="catalog-product__image" src="./assets/images/askesta2.jpg" alt="Диван ASKESTA">
+                <h3 class="catalog-product__subtitle">Диван ASKESTA</h3>
+                <p class="catalog-product__text">
+                    Благодаря защелкивающемуся механизму диван легко раскладывается в комфортную кровать
+                </p>
+                <p class="catalog-product__price">68 000 руб.</p>
+            </article>
+            <article class="catalog-product">
+                <img class="catalog-product__image" src="./assets/images/lunar.jpg" alt="Кресло LUNAR">
+                <h3 class="catalog-product__subtitle">Кресло LUNAR</h3>
+                <p class="catalog-product__text">
+                    Прекрасно переносит солнечные лучи, перепады влажности и любые осадки
+                </p>
+                <p class="catalog-product__price">40 000 руб.</p>
+            </article>
+            <article class="catalog-product">
+                <img class="catalog-product__image" src="./assets/images/nastan2.jpg" alt="Шкаф Nastan">
+                <h3 class="catalog-product__subtitle">Шкаф Nastan</h3>
+                <p class="catalog-product__text">
+                    Мебель может быть оснащена разнообразными системами подсветки.
+                </p>
+                <p class="catalog-product__price">80 000 руб.</p>
+            </article>
+        </div>
+        <a class="catalog__link" href="#">Показать ещё</a>
+    </section>
+    <div class="footer-wrapper">
+        <footer class="footer center">
+            <a class="footer__logo-link" href="index.html"><img class="footer__logo" src="./assets/images/logo2.svg"
+                    alt="Логотип"></a>
+            <div class="footer-inner-wrapper">
+                <div class="footer-container">
+                    <h4 class="footer__title">Меню</h4>
+                    <nav class="footer__nav">
+                        <ul class="footer__menu">
+                            <li class="footer__menu-item">
+                                <a class="footer__menu-link" href="index.html">Главная</a>
+                            </li>
+                            <li class="footer__menu-item">
+                                <a class="footer__menu-link" href="catalog.html">Каталог</a>
+                            </li>
+                            <li class="footer__menu-item">
+                                <a class="footer__menu-link" href="cart.html">Корзина</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer-container">
+                    <h4 class="footer__title">Контакты</h4>
+                    <a class="footer__link" href="tel:+79088008080">+7 908 800 80 80</a>
+                    <a class="footer__link" href="mailto:help@interier.com">help@interier.com</a>
+                    <div class="footer-container__social">
+                        <a class="footer__link footer__link_social" href="#"><img src="./assets/images/vk.svg"
+                                alt="VK"></a>
+                        <a class="footer__link footer__link_social" href="#"><img src="./assets/images/telegram.svg"
+                                alt="Telegram"></a>
+                        <a class="footer__link footer__link_social" href="#"><img src="./assets/images/dzen.svg"
+                                alt="Dzen"></a>
+                    </div>
+                </div>
+            </div>
+            <form class="footer-form">
+                <p class="footer-form__text">Получайте наши новости и обновления</p>
+                <input class="footer-form__input" type="email" placeholder="Ваш e-mail">
+                <button class="footer-form__btn" type="submit">Подписаться</button>
+            </form>
+        </footer>
+    </div>
+</body>
+
+</html>
