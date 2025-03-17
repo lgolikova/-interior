@@ -45,10 +45,10 @@
     }
 
     &__title {
-        height: $textLg;
+        font-size: $textLg;
         font-weight: 700;
         margin-bottom: 35px;
-        line-height: 29.26px;
+        line-height: normal;
     }
 
     &__total {
